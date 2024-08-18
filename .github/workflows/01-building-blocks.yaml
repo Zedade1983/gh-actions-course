@@ -12,10 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       -name: Failed step
-        run: echo "I will fail"
-            exit 1
+        run: 
+          echo "I will fail"
+          echo  "exit 1"
     steps:
       -name: Say goodbye
-        run: echo "Goodbye!"
-            exit 0
+        run: 
+          echo "Goodbye!"
+          echo "exit 0"
 
