@@ -8,12 +8,4 @@ jobs:
       - name: Show the trigger
         run: echo "Type of name of event that trigger workflow"
 
-name: 03 - cron jobs
-on:
-  schedule: 
-    - cron: '30 5,17 * * *'
-jobs:
-  schedule:
-    runs-on: ubuntu-latest
-    steps:
-      echo "Event name: ${{ github.event_name}}"
+
