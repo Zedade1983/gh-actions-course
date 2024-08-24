@@ -10,7 +10,7 @@ jobs:
           echo "Triggered by a push event"
           echo "Runner OS: $RUNNER_OS"
           echo "Running on ${{github.ref_name}}"
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v5
         with:
           node-version: 16
       - run: npm ci
