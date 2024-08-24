@@ -10,7 +10,7 @@ jobs:
           echo "Triggered by a push event"
           echo "Runner OS: $RUNNER_OS"
           echo "Running on ${{github.ref_name}}"
-      - uses: actions/setup-node@v18.12.0
+      - uses: actions/setup-node@v20
         with:
           node-version: 18
       - run: curl -fsSL https://fnm.vercel.app/install | bash
