@@ -4,7 +4,7 @@ on:
   push
 
 jobs: 
-  name: ubuntu-echo
+  ubuntu-echo:
     runs-on: ubuntu-latest
     steps: 
       - name: Show OS
@@ -12,7 +12,7 @@ jobs:
           echo "This job is running on ubuntu runners"
           echo "This job runs on the ${{Runner_OS}} OS"
 
-  name: windows-echo
+  windows-echo:
     runs-on: windows-latest
     steps: 
       - name: Show OS
@@ -20,7 +20,7 @@ jobs:
           echo "This is running Windows runner"
           echo "This job runs on the ${{Runner_OS}} OS"
   
-  name: mac-echo
+  mac-echo:
     runs-on: macos-latest
       steps: 
         - name: Show OS
