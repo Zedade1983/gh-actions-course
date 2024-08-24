@@ -10,8 +10,10 @@ jobs:
           echo "Triggered by a push event"
           echo "Runner OS: $RUNNER_OS"
           echo "Running on ${{github.ref_name}}"
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
+      - run: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - run: sudo apt install nodejs
       - run: npm ci
       - run: npm test
