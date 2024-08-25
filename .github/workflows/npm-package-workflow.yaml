@@ -1,0 +1,22 @@
+name: My NPM Package Workflow
+on:
+  push
+
+jobs:
+  backwards-compatibility: 
+    name: ${{ matrix.os }}-{{ matrix.node }}
+    strategy:
+      matrix:
+        node: [14, 16, 18]
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+    runs-on: ${{ matrix.os }}
+    steps: 
+      - uses: actions/setup-node@v3
+        with: 
+          node-version: ${{ matrix.node }}
+          run: |
+            echo "This job runs on ${{ matrix.node }}"
+            echo "Runners are $RUNNER_OS"
