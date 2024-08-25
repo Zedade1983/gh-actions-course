@@ -7,7 +7,7 @@ jobs:
     name: ${{ matrix.os }}-{{ matrix.node }}
     strategy:
       matrix:
-        node: [14, 16, 18]
+        node: [18, 20, 22]
         os:
           - ubuntu-latest
           - macos-latest
@@ -23,5 +23,6 @@ jobs:
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             source ~/.bashrc
             nvm install latest
+            npm ci --force
             echo "This job runs on ${{ matrix.node }}"
             echo "Runners are $RUNNER_OS"
