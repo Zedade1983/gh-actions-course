@@ -1,6 +1,6 @@
 name: My NPM Package Workflow
 on:
-  push
+  workflow_dispatch
 
 jobs:
   backwards-compatibility: 
