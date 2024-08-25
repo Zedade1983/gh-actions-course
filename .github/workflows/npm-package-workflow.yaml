@@ -18,5 +18,7 @@ jobs:
         with: 
           node-version: ${{ matrix.node }}
           run: |
+            install npm
+            npm ci --force
             echo "This job runs on ${{ matrix.node }}"
             echo "Runners are $RUNNER_OS"
