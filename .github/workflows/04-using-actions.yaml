@@ -5,6 +5,9 @@ on: workflow_dispatch
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults: 
+      run:
+        working-directory: 04-using-actions/react-app
     # checkout the code from the repository
     # following custom actions are required: install deps of our react app
     # execute automated tests
@@ -21,6 +24,8 @@ jobs:
           node-version: '20.x'
       - name: Install dependencies
         run: npm ci 
-        working-directory: 04-using-actions/react-app
+        
+      - name: Run Unit Tests
+        run: npm run test
       - name: Print Folders
         run: ls -alh
