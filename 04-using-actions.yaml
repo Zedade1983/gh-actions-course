@@ -1,0 +1,17 @@
+name: 04-using-actions
+
+on: 
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    # checkout the code from the repository
+    # following custom actions are required: install deps of our react app
+    # execute automated tests
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      
+      - name: Printing Folders
+        run: ls
