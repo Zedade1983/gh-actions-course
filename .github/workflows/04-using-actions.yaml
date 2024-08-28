@@ -9,6 +9,10 @@ jobs:
     # following custom actions are required: install deps of our react app
     # execute automated tests
     steps:
+      - name: Trigger event
+        run: |
+          echo "I was triggered by ${{ github.event_name}} event"
+          echo "This job ran on $RUNNER_OS OS"
       - name: checkout code
         uses: actions/checkout@v4
       - name: Setup Node
